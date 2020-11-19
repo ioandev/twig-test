@@ -1,15 +1,27 @@
-# Simple Node Application
+# Twig Test
 
-[![Build Status](https://travis-ci.org/rwieruch/minimal-node-application.svg?branch=master)](https://travis-ci.org/rwieruch/minimal-node-application) [![Slack](https://slack-the-road-to-learn-react.wieruch.com/badge.svg)](https://slack-the-road-to-learn-react.wieruch.com/) [![Greenkeeper badge](https://badges.greenkeeper.io/rwieruch/minimal-node-application.svg)](https://greenkeeper.io/)
+This repo contains an implementation of a groupArrayElements helper function. In the case when groups can't be all filled with the same number of elements, expect the bigger groups to be at the start of the outputted array.
 
-An easy way to get started with JavaScript on the command line. [Read more about it](https://www.robinwieruch.de/minimal-node-js-babel-setup).
+Note that exceptions are thrown only if the parameters don't have the expected types for the parameters provided (`list:array` and `noOfGroups:int`)
 
-[![Edit minimal-react-webpack-babel-setup](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/rwieruch/minimal-node-application/tree/master/?fontsize=14)
+Examples:
+```js
+> groupArrayElements([1, 2, 3, 4, 5], 3)
+< [[1, 2], [3, 4], [5]]
+
+> groupArrayElements([1, 2, 3, 4], 3)
+< [[1, 2], [3], [4]]
+
+> groupArrayElements([1, 2, 3], 3)
+< [[1], [2], [3]]
+
+> groupArrayElements([1, 2], 3)
+< [[1], [2], []]
+```
 
 ## Installation
 
-* `git clone git@github.com:rwieruch/minimal-node-application.git`
-* `cd minimal-node-application`
+* Clone this repo
+* `cd twig-test`
 * `npm install`
-* `npm start`
-* optional: include *.env* in your *.gitignore*
+* `npm test`
